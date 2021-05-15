@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.CreateExamActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="8dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/selectQuestionsButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@android:color/darker_gray"
+            android:onClick="goToSelectQuestions"
+            android:text="SELECT QUESITONS (0)"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/examTimeLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="12dp"
+            android:text="Exam length (minutes)"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/examTimeTextField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="1"
+            android:inputType="numberDecimal" />
+
+        <TextView
+            android:id="@+id/pointsLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="12dp"
+            android:text="Points per question"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/pointsTextField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal" />
+
+        <TextView
+            android:id="@+id/difficultyLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="12dp"
+            android:text="Difficulty"
+            android:textSize="18sp" />
+
+        <SeekBar
+            android:id="@+id/difficultySlider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:max="5"
+            android:min="2" />
+
+        <Button
+            android:id="@+id/saveExamButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="saveExam"
+            android:text="SAVE EXAM" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.ExamSettingsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="8dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/examTimeTextField2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Exam length (in minutes)"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/pointsTextField2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Points per question"
+            android:inputType="numberDecimal" />
+
+        <TextView
+            android:id="@+id/difficultyLabel2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Difficulty"
+            android:textSize="18sp" />
+
+        <SeekBar
+            android:id="@+id/difficultySlider2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="5"
+            android:min="2" />
+
+        <Button
+            android:id="@+id/saveExamSettingsButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="saveSettings"
+            android:text="SAVE SETTINGS" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
