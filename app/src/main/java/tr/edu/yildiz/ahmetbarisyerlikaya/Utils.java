@@ -115,12 +115,8 @@ public class Utils {
 
             in.close();
             out.close();
-
-            System.out.println("Copy successful!\n" + newFile.getAbsolutePath());
             return newFile.getAbsolutePath();
         } catch (Exception e) {
-            System.out.println("An error occurred!");
-            e.printStackTrace();
             return null;
         }
     }

@@ -101,9 +101,6 @@ public class CreateExamActivity extends AppCompatActivity {
 
         Bundle bundle = data.getExtras();
         selectedQuestionIds = (ArrayList<Integer>) bundle.getSerializable("selectedQuestionIds");
-        System.out.println("ARRAYLIST ITERATING");
-        for (int i = 0; i < selectedQuestionIds.size(); i++)
-            System.out.println(selectedQuestionIds.get(i).toString());
         selectQuestionsButton.setText("SELECT QUESTIONS (" + selectedQuestionIds.size() + ")");
     }
 
@@ -114,10 +111,7 @@ public class CreateExamActivity extends AppCompatActivity {
         try {
             db = openOrCreateDatabase("Database", MODE_PRIVATE, null);
             cursor = db.rawQuery("SELECT * FROM questions WHERE user_id = " + userId, null);
-            System.out.println("Query successful!");
-
             while (cursor.moveToNext()) {
-                System.out.println("Inside the while loop!");
                 int id = cursor.getInt(cursor.getColumnIndex("id"));
                 String attachmentPath = cursor.getString(cursor.getColumnIndex("attachment_path"));
                 String infoText = cursor.getString(cursor.getColumnIndex("info_text"));
@@ -191,8 +185,6 @@ public class CreateExamActivity extends AppCompatActivity {
             out.close();
             return file.getAbsolutePath();
         } catch (Exception e) {
-            System.out.println("hata burada");
-            e.printStackTrace();
             return null;
         }
     }

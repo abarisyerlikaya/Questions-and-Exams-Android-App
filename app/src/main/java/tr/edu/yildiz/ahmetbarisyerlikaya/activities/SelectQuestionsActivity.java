@@ -49,10 +49,8 @@ public class SelectQuestionsActivity extends AppCompatActivity {
         try {
             db = openOrCreateDatabase("Database", MODE_PRIVATE, null);
             cursor = db.rawQuery("SELECT * FROM questions WHERE user_id = " + userId, null);
-            System.out.println("Query successful!");
 
             while (cursor.moveToNext()) {
-                System.out.println("Inside the while loop!");
                 int id = cursor.getInt(cursor.getColumnIndex("id"));
                 String attachmentPath = cursor.getString(cursor.getColumnIndex("attachment_path"));
                 String infoText = cursor.getString(cursor.getColumnIndex("info_text"));

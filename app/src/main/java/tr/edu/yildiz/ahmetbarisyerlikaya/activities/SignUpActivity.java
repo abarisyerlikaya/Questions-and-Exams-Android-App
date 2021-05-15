@@ -114,7 +114,6 @@ public class SignUpActivity extends AppCompatActivity {
                     (imageBytes != null ? (", '" + imageBytes) + "'" : "") + ")");
             message = "Successfully signed up! Please sign in.";
             intent = new Intent(SignUpActivity.this, SignInActivity.class);
-            System.out.println("Here! " + message);
         } catch (Exception e) {
             message = "An error occurred while inserting into database.";
         } finally {
@@ -210,7 +209,7 @@ public class SignUpActivity extends AppCompatActivity {
                     "AND last_name = '" + lastName + "'", null);
             if (cursor.getCount() > 0) result = true;
         } catch (Exception e) {
-            e.printStackTrace();
+            result = false;
         } finally {
             if (cursor != null) cursor.close();
             if (db != null) db.close();
@@ -227,7 +226,7 @@ public class SignUpActivity extends AppCompatActivity {
             cursor = db.rawQuery("SELECT * FROM users WHERE email = '" + email + "'", null);
             if (cursor.getCount() > 0) result = true;
         } catch (Exception e) {
-            e.printStackTrace();
+            result = false;
         } finally {
             if (cursor != null) cursor.close();
             if (db != null) db.close();
@@ -244,7 +243,7 @@ public class SignUpActivity extends AppCompatActivity {
             cursor = db.rawQuery("SELECT * FROM users WHERE phone_number = '" + phoneNumber + "'", null);
             if (cursor.getCount() > 0) result = true;
         } catch (Exception e) {
-            e.printStackTrace();
+            result = false;
         } finally {
             if (cursor != null) cursor.close();
             if (db != null) db.close();

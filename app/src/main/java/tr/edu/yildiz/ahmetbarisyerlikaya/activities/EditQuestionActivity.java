@@ -174,7 +174,6 @@ public class EditQuestionActivity extends AppCompatActivity {
         try {
             db = openOrCreateDatabase("Database", MODE_PRIVATE, null);
             cursor = db.rawQuery("SELECT * FROM questions WHERE id = " + id, null);
-            System.out.println("Query successful!");
 
             cursor.moveToFirst();
             int id = cursor.getInt(cursor.getColumnIndex("id"));
@@ -238,8 +237,7 @@ public class EditQuestionActivity extends AppCompatActivity {
             else if (correctAnswer == 3) optionDRadio.setChecked(true);
             else if (correctAnswer == 4) optionERadio.setChecked(true);
         } catch (Exception e) {
-            System.out.println("This is the error fetch data!");
-            e.printStackTrace();
+            Toast.makeText(EditQuestionActivity.this, "An error occurred!", LENGTH_SHORT).show();
         } finally {
             if (cursor != null) cursor.close();
             if (db != null) db.close();
